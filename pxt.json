@@ -1,0 +1,19 @@
+{
+    "name": "HaodaAI",
+    "version": "1.0.0",
+    "description": "支持卡片、标签、人脸、颜色、物体等多种识别模式",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "enums.d.ts",
+        "_locales/zh/HaodaAI-strings.json",
+        "_locales/zh/HaodaAI-jsdoc-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "preferredEditor": "tsprj"
+}
