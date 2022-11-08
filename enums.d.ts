@@ -44,11 +44,11 @@ declare const enum haodaai_led_color_e {
 
 declare const enum haodaai_mode_e {
     //% block="SerialMode"
-    //% blockHidden=true 
+    //% blockHidden=true
     kSerialMode = 0,
     //% block="I2CMode"
     kI2CMode = 1,
-    //% blockHidden=true 
+    //% blockHidden=true
     kUnknownMode,
 }
 
@@ -99,7 +99,7 @@ declare const enum haodaai_coordinate_type_e{
     kAbsoluteCoordinate = 0,
     //% block="PercentageCoordinate"
     kPercentageCoordinate = 1,
-} 
+}
 
 declare const enum haodaai_camera_white_balance_e {
     //% block="AutoWhiteBalance"
@@ -313,6 +313,16 @@ declare const enum haodaai_obj_info_e {
     kGValue = 7,
     //% block="blue channel"
     kBValue = 8,
+    //% block="x1 value"
+    kX1Value = 9,
+    //% block="y1 value"
+    kY1Value = 10,
+    //% block="x0 value"
+    kX0Value = 11,
+    //% block="y0 value"
+    kY0Value = 12,
+    //% block="angle"
+    kAngle = 13,
 }
 
 declare const enum haodaai_gen_info_e {
@@ -326,6 +336,19 @@ declare const enum haodaai_gen_info_e {
     kHeightValue,
     //% block="label"
     kLabel
+}
+
+declare const enum haodaai_Line_info_e {
+    //% block="X coordinate of end point"
+    kX1Value = 1,
+    //% block="Y coordinate of end point"
+    kY1Value,
+    //% block="X coordinate of starting point"
+    kX0Value,
+    //% block="Y coordinate of starting point"
+    kY0Value,
+    //% block="inclination angle"
+    kAngle
 }
 
 declare const enum haodaai_qr_info_e {

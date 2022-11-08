@@ -1,6 +1,6 @@
 {
     "name": "HaodaAI",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "支持卡片、标签、人脸、颜色、物体等多种识别模式",
     "dependencies": {
         "core": "*"

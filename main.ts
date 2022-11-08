@@ -274,7 +274,7 @@ namespace HaodaAI {
             }
             return err;
         }
-            
+
 
         SensorSetRestart() {
             return this._stream.Set(kRegRestart, 1);
@@ -407,12 +407,22 @@ namespace HaodaAI {
                     return _vision_states[vision_type - 1].haodaai_objects[obj_id].data4;
                 case haodaai_obj_info_e.kLabel:
                     return _vision_states[vision_type - 1].haodaai_objects[obj_id].data5;
-                case haodaai_obj_info_e.kGValue:
-                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data1;
                 case haodaai_obj_info_e.kRValue:
+                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data1;
+                case haodaai_obj_info_e.kGValue:
                     return _vision_states[vision_type - 1].haodaai_objects[obj_id].data2;
                 case haodaai_obj_info_e.kBValue:
                     return _vision_states[vision_type - 1].haodaai_objects[obj_id].data3;
+                case haodaai_obj_info_e.kX1Value:
+                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data1;
+                case haodaai_obj_info_e.kY1Value:
+                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data2;
+                case haodaai_obj_info_e.kX0Value:
+                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data3;
+                case haodaai_obj_info_e.kY0Value:
+                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data4;
+                case haodaai_obj_info_e.kAngle:
+                    return _vision_states[vision_type - 1].haodaai_objects[obj_id].data5;
                 default:
                     return 0;
             }
@@ -618,7 +628,7 @@ namespace HaodaAI {
     //% level.min=0 level.max=15 level.defl=1
     //% inlineInputMode=inline
     //% expandableArgumentMode="enabled"
-    //% group="Settings" advanced=true 
+    //% group="Settings" advanced=true
     export function LedSetColor(detected_color: haodaai_led_color_e, undetected_color: haodaai_led_color_e, level: number = 1) {
         while (pHaodaAI.LedSetColor(detected_color, undetected_color, level) != HAODAAI_OK);
     }
@@ -691,6 +701,20 @@ namespace HaodaAI {
     //% group="Functions"
     export function ColorRcgValue(obj_info: haodaai_color_info_e, obj_id: number = 0): number {
         return pHaodaAI.GetValue(haodaai_vision_e.kVisionColor, <number>obj_info, obj_id)
+    }
+
+    /**
+     * Get the result of vision Line value.
+     * @param obj_info Paramters type
+     * @param obj_id:  object index
+     */
+    //% blockId=HaodaAI_get_Line_value block=" HaodaAI  algorithm Line| %obj_info|| index %obj_id " color="#2E8B57"
+    //% inlineInputMode=inline
+    //% expandableArgumentMode="enabled"
+    //% obj_id.min=0 obj_id.max=24 obj_id.defl=0
+    //% group="Functions"
+    export function LineValue(obj_info: haodaai_Line_info_e, obj_id: number = 0): number {
+        return pHaodaAI.GetValue(haodaai_vision_e.kVisionLine, <number>obj_info, obj_id)
     }
 
     /**
